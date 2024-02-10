@@ -39,7 +39,7 @@ const navItem = [
 export default function Navbar() {
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" className='bg-black'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Link href={"/"}>
@@ -55,7 +55,7 @@ export default function Navbar() {
                         ))}
                     </Box>
                     <Box>
-                        <Stack direction="row">
+                        <Stack direction="row" sx={{ "& svg": { color: 'white' } }}>
                             <IconButton>
                                 <Facebook />
                             </IconButton>
