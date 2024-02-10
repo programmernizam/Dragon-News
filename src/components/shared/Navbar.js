@@ -1,11 +1,40 @@
 'use client'
+import logo from '@/assets/logo.png';
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { IconButton, Stack } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
-
-const pages = ['Products', 'Pricing', 'Blog'];
+import Image from 'next/image';
+import Link from 'next/link';
+const navItem = [
+    {
+        route: "Home",
+        pathname: "/"
+    },
+    {
+        route: "Pages",
+        pathname: "/pages"
+    },
+    {
+        route: "Category",
+        pathname: "/category"
+    },
+    {
+        route: "News",
+        pathname: "/news"
+    },
+    {
+        route: "About",
+        pathname: "/about"
+    },
+    {
+        route: "Contact",
+        pathname: "/contact"
+    },
+]
 
 export default function Navbar() {
 
@@ -13,16 +42,30 @@ export default function Navbar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                    <Link href={"/"}>
+                        <Image width={100} height={100} src={logo} alt="logo" />
+                    </Link>
+                    <Box className="w-full text-center">
+                        {navItem.map((item) => (
+                            <Link key={item} href={item.pathname}>
+                                <Button className="text-white">
+                                    {item.route}
+                                </Button>
+                            </Link>
                         ))}
+                    </Box>
+                    <Box>
+                        <Stack direction="row">
+                            <IconButton>
+                                <Facebook />
+                            </IconButton>
+                            <IconButton>
+                                <Instagram />
+                            </IconButton>
+                            <IconButton>
+                                <Twitter />
+                            </IconButton>
+                        </Stack>
                     </Box>
                 </Toolbar>
             </Container>
