@@ -49,7 +49,7 @@ export default function Footer() {
                 </Box>
                 <Box className="w-full text-center">
                     {navItem.map((item) => (
-                        <Link key={item} href={item.pathname}>
+                        <Link key={Math.random()} href={item.pathname}>
                             <Button className="text-white">
                                 {item.route}
                             </Button>

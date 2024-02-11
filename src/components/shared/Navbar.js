@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from './Header';
 const navItem = [
     {
         route: "Home",
@@ -39,39 +40,42 @@ const navItem = [
 export default function Navbar() {
 
     return (
-        <AppBar position="static" className='bg-black'>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Link href={"/"}>
-                        <Image width={100} height={100} src={logo} alt="logo" />
-                    </Link>
-                    <Box className="w-full text-center">
-                        {navItem.map((item) => (
-                            <Link key={item} href={item.pathname}>
-                                <Button className="text-white">
-                                    {item.route}
-                                </Button>
-                            </Link>
-                        ))}
-                    </Box>
-                    <Box>
-                        <Stack direction="row" sx={{ "& svg": { color: 'white' } }}>
-                            <IconButton>
-                                <Facebook />
-                            </IconButton>
-                            <IconButton>
-                                <Instagram />
-                            </IconButton>
-                            <IconButton>
-                                <Twitter />
-                            </IconButton>
-                            <IconButton>
-                                <LinkedIn />
-                            </IconButton>
-                        </Stack>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+        <>
+            <Header />
+            <AppBar position="static" className='bg-black'>
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <Link href={"/"}>
+                            <Image width={100} height={100} src={logo} alt="logo" />
+                        </Link>
+                        <Box className="w-full text-center">
+                            {navItem.map((item) => (
+                                <Link key={Math.random()} href={item.pathname}>
+                                    <Button className="text-white">
+                                        {item.route}
+                                    </Button>
+                                </Link>
+                            ))}
+                        </Box>
+                        <Box>
+                            <Stack direction="row" sx={{ "& svg": { color: 'white' } }}>
+                                <IconButton>
+                                    <Facebook />
+                                </IconButton>
+                                <IconButton>
+                                    <Instagram />
+                                </IconButton>
+                                <IconButton>
+                                    <Twitter />
+                                </IconButton>
+                                <IconButton>
+                                    <LinkedIn />
+                                </IconButton>
+                            </Stack>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </>
     );
 }
