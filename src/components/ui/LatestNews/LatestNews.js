@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Image from "next/image";
 export default function LatestNews() {
     return (
-        <Box className="my-5">
+        <Box className="py-5">
             <Card>
                 <CardActionArea>
                     <CardMedia>
@@ -26,7 +26,7 @@ export default function LatestNews() {
                     </CardContent>
                 </CardActionArea>
             </Card>
-            <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className='mt-2'>
+            <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className='pt-6'>
                 <Grid item xs={6}>
                     <Card>
                         <CardActionArea>
