@@ -1,6 +1,6 @@
 'use client'
 import logo from '@/assets/logo.png';
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
 import { IconButton, Stack } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -64,6 +64,9 @@ export default function Navbar() {
                             </IconButton>
                             <IconButton>
                                 <Twitter />
+                            </IconButton>
+                            <IconButton>
+                                <LinkedIn />
                             </IconButton>
                         </Stack>
                     </Box>
